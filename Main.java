@@ -24,20 +24,15 @@ public class Main {
     System.out.println(dogs);
     // => [(King, 5), (King, 5), (Rex, 7), (Rex, 7), (Boss, 2), (Boss, 2), (Duke, 11), (Duke, 11)]
 
-    removeDuplicates(dogs);
+    removeDuplicatesWithSets(dogs);
     System.out.println(dogs);
     // => [(King, 5), (Rex, 7), (Boss, 2), (Duke, 11)]
   }
 
-  static void removeDuplicates(ArrayList<Dog> dogs) {
-     ArrayList<Dog> result = new ArrayList<>();
-     for (Dog dog : dogs){
-         if (!(result.contains(dog))){
-            result.add(dog);
-         }
-     }
+  static void removeDuplicatesWithSets(ArrayList<Dog> dogs) {
+     Set<Dog> dogSet = new HashSet<>(dogs);
      dogs.clear();
-     dogs.addAll(result);
+     dogs.addAll(dogSet);
   }
 
 }
