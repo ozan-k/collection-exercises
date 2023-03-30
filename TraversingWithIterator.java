@@ -1,10 +1,11 @@
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.*;
 
-class TraversingWithForEachLoop {
+class TraversingWithIterator {
 	public static void main(String args[]){
+		// Creating the collection
 		Collection<String> friends = new ArrayList<>();
 
+		// Adding objects in the colleciton
 		friends.add("Chandler");
 		friends.add("Joey");
 		friends.add("Monica");
@@ -12,8 +13,11 @@ class TraversingWithForEachLoop {
 		friends.add("Ross");
 		friends.add("Phoebe");
 
-		// Traversing the collection using a for-each loop
-		for (String friend : friends) {
+		// Traversing the collection using an Iterator
+		Iterator<String> itr = friends.iterator();
+
+		while(itr.hasNext()){
+			String friend = itr.next();
 			System.out.println(friend);
 		}
 	}
